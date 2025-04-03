@@ -1,0 +1,14 @@
+def credit(bal,val):
+    bal+=val
+    return bal
+def debit(bal,val):
+    bal-=val
+    return bal
+def checkbalance(bal):
+    print("Check Balance:",bal)
+bal=0
+bal=credit(bal,2000)
+print("Amount Credited:",bal)
+bal=debit(bal,1300)
+print("Amount Debited:",bal)
+checkbalance(bal)
