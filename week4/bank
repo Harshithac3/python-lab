@@ -1,0 +1,51 @@
+def credit(balance, transactions, amount):
+    balance += amount
+    transactions.append(amount)
+    print("credited successfully",amount)
+    return balance,transactions
+def debit(balance,transactions, amount):
+    if amount > balance:
+        print("Insufficient amount")
+    else:
+        balance -= amount
+        transactions.append(-amount)
+        print("debitted successfully",amount)
+    return balance,transactions
+def show_balance(balance):
+    print("current balance:{balance}")
+def last_5_transactions(transactions):
+    print("Last 5 transactions:")
+    for transaction in transactions:
+        print(transaction)
+balance=0
+transactions=[]
+while True:
+    print("Bank Application")
+    print("1. Credit")
+    print("2. Debit")
+    print("3. Show Balance")
+    print("4. Last 5 transactions")
+    print("5. Exit")
+    choice = int(input("Enter choice:"))
+    
+    if choice == 1:
+        amount = int(input("Enter amount to credit:"))
+        balance,transactions = credit(balance, transactions,amount)
+    elif choice == 2:
+        amount = int(input("Enter amount to debit:"))
+        balance,transactions = debit(balance, transactions,amount)
+    elif choice == 3:
+        check_balance()
+    elif choice == 4:
+        last_5_transactions(transactions)
+    elif choice == 5:
+        print("Thank you!!")
+        break 
+    else:
+        print("wrong choice")
+    
+    
+
+    
+    
+    
