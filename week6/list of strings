@@ -48,7 +48,8 @@ print(my_string.replace('Hello', 'Hi'))
 print(my_string.find('World'))
 
 name = "Alice"
-age = 25def count_alphabets(s):
+age = 25
+def count_alphabets(s):
     
     count = 0
     for char in s:
