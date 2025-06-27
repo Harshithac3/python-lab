@@ -1,0 +1,36 @@
+with open('harry_potter.txt','r') as f:
+  data = f.read()
+
+splitted_data=data.split('\n')
+splitted_data
+
+title=splitted_data[0]
+
+author=splitted_data[-1]
+
+titleYear=splitted_data[1:-1]
+
+d={}
+i=0
+for i in range(len(titleYear)):
+  dkey=title +' '+str(i+1)
+  d[dkey]=None
+
+titleList=[]
+yearList=[]
+for i in titleYear:
+  title = i.split('(')[0].strip()
+  titleList.append(title)
+  year = i.split('(')[1][:-1]
+  yearList.append(year)
+print(titleList)
+print(yearList)
+
+i=0
+for key in d:
+  d[key] = {"title":titleList[i], "year":yearList[i], "author":author}
+  i+=1
+d
+
+for i in d:
+  print(i,d[i])
